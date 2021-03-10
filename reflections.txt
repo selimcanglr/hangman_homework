@@ -1,0 +1,47 @@
+Course - Section: CS102 - 03
+Name - ID       : Selim Can Güler - 22002811
+Date            : 14.02.2021
+Time spent      : Around 2.5 hours
+Status of code  : Working
+
+In the constructor:
+- In the detailed design stage, chooseSecretWord() method didn't seem to return any value(there  was nothing 
+specified next to it), and the constructor that I have chosen only invokes the chooseSecretWord() method 
+without initializing secretWord assuming that the method will initialize and assign a value to the secretWord 
+property. Even though the chooseSecretWord() method was not supposed to return a value in the UML diagram I 
+have changed the implementation so that it complies with the written homework instructions on moodle. So now,
+It returns a string and the secretWord is initialized in the constructor).
+
+- I've also converted the chooseSecretWord() method to be private (it was public).
+- "_" was used instead of "*" in the for loop while creating the knownSoFar. I have changed it
+to be "*".
+
+In tryThis() method: 
+- tryThis() method was not returning any error values (-1, -2, -3). I've implemented it so that the method 
+returns -1 when the user enters invalid letter, returns -2 when the letter was already used, returns -3 if 
+the game is over. 
+- When the user enters an upper case value, tryThis() method returns that the character is invalid. To fix
+this, I've converted the letter char that was given as input to lower case in the beginning of the method.
+
+In isGameOver() and hasLost() method: 
+- The if statement was redundant in isGameOver() method. I've changed it to be a one line return statement
+and added javadoc descriptions 
+
+In the main method:
+- Deleted unnecessary and repeating print statements and small name corrections. 
+- A chunk of code was reserved to check whether the given letter is valid (also at some point the letter that 
+was entered by user was converted to upperCase for no reason, that part is removed) , however tryThis() method 
+already does this, I have deleted those unnecessary code and used the tryThis() method to check whether the 
+letter was already used or it is invalid. Also now, the output of the tryThis() method is implemented in the
+program logic.
+
+Overall:
+- tryThis() method was not implemented correctly at first place, apparently it was supposed to return error
+values. However this was not discussed in the detailed design process and it was a reason that caused some 
+problems in the future implementation of the program. 
+- At the end, main reasons for the errors were probably design and communication related. The methods were 
+not functioning as it should, some methods were not used in the main method and was instead replaced by a 
+chunk of code that does the same thing with an already method. Understanding how the other parts of the program
+work and designing more carefully would prevent this.
+
+
